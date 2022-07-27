@@ -1,0 +1,7 @@
+api:
+  basic:
+    apiUrl: http://localhost:8080/mytasks
+    taskUrl: ${api.basic.apiUrl}/task
+    auth:
+      userName: usuario
+      pass: senha
