@@ -16,6 +16,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -51,8 +52,9 @@ public class UpDataToBase {
             roleUser = roleRepository.save(roleUser);
 
             User user = new User();
-            user.setName("Admin");
-            user.setPassword("123456");
+            user.setUsername("Admin");
+            String senhaCrypt = BCrypt.hashpw("123456", BCrypt.gensalt());
+            user.setPassword(senhaCrypt); //BeCrypt
             user.setRoles(Set.of(roleAdmin, roleUser));
 
             userRepository.save(user);

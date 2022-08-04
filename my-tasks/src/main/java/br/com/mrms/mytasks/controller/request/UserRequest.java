@@ -23,7 +23,7 @@ public class UserRequest {
     private Integer id;
 
     @NotBlank(message = "Campo nome do usuário não pode estar vazio")
-    private String name;
+    private String username;
 
     @NotBlank(message = "Campo senha do usuário não pode estar vazio")
     private String password;

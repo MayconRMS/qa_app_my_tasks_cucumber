@@ -1,0 +1,11 @@
+POST http://localhost:8080/mytasks/api/auth/signin HTTP/1.1
+content-type: application/json
+
+{
+	"username": "Admin",
+	"password": "123456"
+}
+
+
+
+         

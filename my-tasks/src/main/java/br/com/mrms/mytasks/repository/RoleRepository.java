@@ -10,11 +10,13 @@ import br.com.mrms.mytasks.model.ERole;
 import br.com.mrms.mytasks.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 /**
  * @author Maycon Ricardo Monteiro de Siqueira
  * @version 1.0 01/02/2021
  */
-public interface RoleRepository extends JpaRepository<Role,Integer> {
+public interface RoleRepository extends JpaRepository<Role, Integer> {
 
-    Role findByName(ERole name);
+    Optional<Role> findByName(ERole name);
 }

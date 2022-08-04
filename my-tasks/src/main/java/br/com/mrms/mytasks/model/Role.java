@@ -15,7 +15,7 @@ import javax.persistence.*;
 
 /**
  * @author Maycon Ricardo Monteiro de Siqueira
- * @version 1.0 01/02/2021
+ * @version 1.0 01/02/2022
  */
 @Getter
 @Setter
@@ -27,6 +27,9 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
     private ERole name;
 
     public Role(ERole name){
